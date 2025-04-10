@@ -1,0 +1,45 @@
+.site-header {
+    height: var(--header-height);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+  }
+  
+  .site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .site-logo {
+    height: 4.5rem;
+  }
+  
+  .header-links, .action-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-link, .action-link {
+    font-size: 14px;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 500;
+  }
+  
+  .action-link.highlight {
+    background-color: var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+  }

@@ -1,0 +1,41 @@
+.news-ticker {
+    background-color: var(--light-bg);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .news-ticker .container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ticker-label {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  
+  .ticker-container {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .ticker-track {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .ticker-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  
+  .ticker-timestamp {
+    color: var(--secondary-color);
+    font-weight: bold;
+  }
+  
+  .ticker-controls {
+    display: flex;
+    gap: 10px;
+  }

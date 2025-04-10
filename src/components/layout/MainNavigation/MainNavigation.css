@@ -1,0 +1,23 @@
+.main-navigation {
+    padding-top:  0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+  }
+  
+  .nav-item {
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'Red Hat Text', sans-serif;
+  }
+  

@@ -1,0 +1,28 @@
+.featured-article {
+    margin-bottom: 30px;
+  }
+  
+  .featured-tag {
+    display: inline-block;
+    background-color: #ff0000;
+    color: white;
+    padding: 4px 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .featured-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  .featured-summary {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .featured-image img {
+    width: 100%;
+    height: auto;
+  }
+  
