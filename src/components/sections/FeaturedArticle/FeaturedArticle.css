@@ -1,28 +1,93 @@
+/* src/components/sections/FeaturedArticle/FeaturedArticle.css */
 .featured-article {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  font-family: 'Georgia', serif;
+
+.featured-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .featured-content-wrapper {
+    flex-direction: row;
+  }
+
+  .featured-content {
+    flex : 1;
+    padding-right: 20px;
   }
   
-  .featured-tag {
-    display: inline-block;
-    background-color: #ff0000;
-    color: white;
-    padding: 4px 10px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  .featured-image {
+    flex: 2;
   }
-  
-  .featured-title {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-  
-  .featured-summary {
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
-  
-  .featured-image img {
-    width: 100%;
-    height: auto;
-  }
-  
+}
+
+.featured-content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+.featured-tag {
+  display: inline-block;
+  color: var(--red-light);
+  padding: 4px 10px;
+  font-weight: bolder;
+  font-family: 'Red Hat Text', sans-serif;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.featured-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.featured-summary {
+  font-size: 0.9rem;
+  font-family: 'Red Hat Text', sans-serif;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.updates-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.updates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.updates-list li {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--red-light);
+  margin-right: 10px;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.featured-image {
+  flex: 2;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+}

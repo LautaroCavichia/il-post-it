@@ -1,41 +1,106 @@
+/* src/components/sections/NewsTicker.css */
 .news-ticker {
-    background-color: var(--light-bg);
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .news-ticker .container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .ticker-label {
-    font-weight: bold;
-    margin-right: 15px;
-  }
-  
-  .ticker-container {
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  .ticker-track {
-    display: flex;
-    gap: 30px;
-  }
-  
-  .ticker-item {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-  }
-  
-  .ticker-timestamp {
-    color: var(--secondary-color);
-    font-weight: bold;
-  }
-  
-  .ticker-controls {
-    display: flex;
-    gap: 10px;
-  }
+  background-color: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.news-ticker .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.ticker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ticker-label {
+  font-weight:900;
+  color: var(--red);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.ticker-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.ticker-control {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #333;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ticker-control:hover {
+  background-color: #555;
+}
+
+.arrow-left, .arrow-right {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  position: relative;
+}
+
+.arrow-left {
+  transform: rotate(135deg);
+  left: 2px;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+  right: 1px;
+}
+
+.ticker-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.ticker-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: max-content;
+}
+
+.ticker-item {
+  width: 300px;
+  padding: 0 15px 0 0;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ticker-content {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.ticker-timestamp {
+  color: var(--red);
+  font-weight: lighter;
+  display: inline;
+  margin-right: 6px;
+}
+
+.ticker-text {
+  color: #000;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-weight: bold;
+  display: inline;
+}

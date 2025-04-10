@@ -37,9 +37,8 @@ const generateLoremIpsum = (sentences: number = 3): string => {
 };
 
 // Generate random image URL from Lorem Picsum
-const generateRandomImageUrl = (width: number = 800, height: number = 600): string => {
-  const id = Math.floor(Math.random() * 1000);
-  return `https://picsum.photos/id/${id}/${width}/${height}`;
+const generateRandomImageUrl = (width: number = 900, height: number = 600): string => {
+  return `https://placehold.co/${width}x${height}`;
 };
 
 // Generate mock articles
@@ -61,7 +60,7 @@ export const generateNewsItems = (count: number): NewsItem[] => {
   return Array(count).fill(null).map((_, index) => ({
     id: index + 1,
     timestamp: timestamps[Math.floor(Math.random() * timestamps.length)],
-    text: generateLoremIpsum(1),
+    text: generateLoremIpsum(1.5),
     category: Math.random() > 0.3 ? categories[Math.floor(Math.random() * categories.length)] : undefined
   }));
 };

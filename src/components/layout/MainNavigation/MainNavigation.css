@@ -1,23 +1,43 @@
-.main-navigation {
-    padding-top:  0.5rem;
-    border-bottom: 1px solid var(--border-color);
-  }
+.main-navigation-container {
   
-  .nav-list {
-    display: flex;
-    list-style: none;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px 0;
+  .main-navigation {
+      padding-top:  0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .my-nav-container {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-list {
+      justify-content: space-around;
+      display: flex;
+      width: 100%;
+      list-style: none;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px 0px;
+    }
+    
+    .nav-item {
+      margin-right: 15px;
+
+      @media screen and (max-width: 1280px) {
+        margin-right: 7px;
+        
+      }
+    }
+    
+    .nav-link {
+      font-weight: 600;
+      font-size: 0.85rem;
+      font-family: 'Red Hat Text', sans-serif;
+
+      @media screen and (max-width: 1280px) {
+        font-size: 11px;
+        
+      }
+    }
   }
-  
-  .nav-item {
-    margin-right: 20px;
-  }
-  
-  .nav-link {
-    font-weight: 600;
-    font-size: 15px;
-    font-family: 'Red Hat Text', sans-serif;
-  }
-  

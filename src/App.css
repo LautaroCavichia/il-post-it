@@ -3,9 +3,11 @@
     --secondary-color: #666;
     --accent-color: #ffda00;
     --link-color: #1a73e8;
-    --border-color: #e5e5e5;
+    --border-color: #545454;
     --light-bg: #f8f8f8;
     --header-height: 70px;
+    --red:#ba1212;
+    --red-light:#f00;
   }
   
   * {
@@ -19,14 +21,6 @@
     line-height: 1.6;
     color: var(--primary-color);
   }
-  
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
   .row {
     display: flex;
     flex-wrap: wrap;

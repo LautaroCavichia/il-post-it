@@ -16,38 +16,30 @@ const HomePage: React.FC = () => {
   const sidebarArticles = generateMockArticles(4);
   const flashNews = generateMockArticles(3);
 
+  const customArticle = {
+    ...featuredArticles[0],
+    title: "Anche l'Unione Europea imporrà nuovi dazi contro gli Stati Uniti",
+    summary: "Dopo quelli della Cina, in una serie di ritorsioni piuttosto preoccupanti: tutte le notizie su questa giornata turbolenta, man mano che arrivano"
+  };
+
   return (
     <div className="homepage">
       <Header />
       <MainNavigation />
       <NewsTicker items={newsItems} />
-      
       <main className="main-content">
-        <div className="container">
+        <div className="my-container">
           <div className="row">
+          <FeaturedArticle article={customArticle} />
             <div className="col-md-8">
-              <FeaturedArticle article={featuredArticles[0]} />
-              
-              <div className="live-section">
-                <h2>LIVE</h2>
-                <ArticleGrid articles={featuredArticles.slice(1, 4)} />
-              </div>
-              
-              <div className="updates-section">
-                <h3>Gli ultimi aggiornamenti</h3>
-                <ArticleGrid articles={featuredArticles.slice(2, 5)} layout="list" />
-              </div>
-              
               <div className="secondary-articles">
-                {/* Section for additional articles */}
                 <ArticleGrid articles={featuredArticles} layout="columns" />
               </div>
             </div>
-            
             <div className="col-md-4">
-              <Sidebar 
-                highlightedArticles={sidebarArticles} 
-                flashNews={flashNews} 
+              <Sidebar
+                highlightedArticles={sidebarArticles}
+                flashNews={flashNews}
               />
             </div>
           </div>
