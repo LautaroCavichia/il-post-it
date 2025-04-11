@@ -1,0 +1,121 @@
+/* Podcast.css */
+.podcast-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    max-width: 600px;
+    background-color: white;
+    color: #333;
+  }
+  
+  .podcast-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #e0e0e0;
+    background-color:aliceblue;
+    border-radius: 10px;
+  }
+  
+  .podcast-header h2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .view-all {
+    
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .arrow {
+    color: #018786;
+    margin-left: 4px;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  
+  .podcast-list {
+    border-top: none;
+  }
+  
+  .podcast-item {
+    padding: 15px 3px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .podcast-date {
+    font-size: 12px;
+    color: #757575;
+    margin-bottom: 2px;
+  }
+  
+  .podcast-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .podcast-info {
+    flex: 1;
+  }
+  
+  .podcast-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #212121;
+    line-height: 1.2;
+  }
+  
+  .podcast-duration {
+    font-size: 14px;
+    color: #616161;
+  }
+  
+  .podcast-image {
+    width: 85px;
+    height: 95px;
+    min-width: 48px;
+    margin-left: 15px;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  
+  .podcast-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .podcast-image-featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Featured podcast item styles */
+  .podcast-item-featured {
+    padding-bottom: 20px;
+  }
+  
+  .podcast-content-featured {
+    flex-direction: column;
+  }
+  
+  .podcast-image-featured {
+    width: 100%;
+    height: 180px;
+    margin-left: 0;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .podcast-info-featured {
+    width: 100%;
+  }
+  

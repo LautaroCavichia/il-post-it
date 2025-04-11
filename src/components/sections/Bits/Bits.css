@@ -1,18 +1,20 @@
 /* src/components/sections/NewsTicker.css */
 .news-ticker {
   background-color: #fff;
-  padding: 10px 0;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 15px;
+  border-bottom: 1px solid var(--border-color);
   font-family: 'Arial', sans-serif;
   position: relative;
-}
 
-.news-ticker .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  position: relative;
-}
+
+  .news-ticker .bits-container {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 15px; 
+    position: relative;
+    width: 100%; 
+    box-sizing: border-box; 
+  }
 
 .ticker-header {
   display: flex;
@@ -93,6 +95,7 @@
 
 .ticker-timestamp {
   color: var(--red);
+  font-size: 0.75rem;
   font-weight: lighter;
   display: inline;
   margin-right: 6px;
@@ -103,4 +106,5 @@
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-weight: bold;
   display: inline;
+}
 }

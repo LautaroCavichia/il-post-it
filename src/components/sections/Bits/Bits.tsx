@@ -1,6 +1,6 @@
 // src/components/sections/NewsTicker.tsx
 import React, { useState, useRef, useEffect } from 'react';
-import './NewsTicker.css';
+import './Bits.css';
 
 interface NewsItem {
   id: string | number;
@@ -12,7 +12,7 @@ interface NewsTickerProps {
   items: NewsItem[];
 }
 
-const NewsTicker: React.FC<NewsTickerProps> = ({ items }) => {
+const Bits: React.FC<NewsTickerProps> = ({ items }) => {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -38,13 +38,15 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ items }) => {
 
   return (
     <div className="news-ticker">
-      <div className="container">
+      <div className="bits-container">
         <div className="ticker-header">
           <div className="ticker-label">BITS</div>
           <div className="ticker-controls">
-            <button className="ticker-control prev" onClick={handlePrev} aria-label="Previous news">
-              <span className="arrow-left"></span>
-            </button>
+            {currentItemIndex > 0 && (
+              <button className="ticker-control prev" onClick={handlePrev} aria-label="Previous news">
+                <span className="arrow-left"></span>
+              </button>
+            )}
             <button className="ticker-control next" onClick={handleNext} aria-label="Next news">
               <span className="arrow-right"></span>
             </button>
@@ -67,4 +69,4 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ items }) => {
   );
 };
 
-export default NewsTicker;
+export default Bits;

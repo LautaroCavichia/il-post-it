@@ -5,45 +5,24 @@ import './ArticleCard.css';
 
 interface ArticleCardProps {
   article: Article;
-  variant?: 'default' | 'featured' | 'compact' | 'sidebar';
+  variant?: 'default' | 'sidebar';
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ 
-  article, 
-  variant = 'default' 
-}) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ article, variant = 'default' }) => {
+  const isSidebar = variant === 'sidebar';
+
   return (
-    <article className={`article-card article-card-${variant}`}>
-      {(variant !== 'compact') && (
-        <div className="article-image">
-          <img src={article.imageUrl} alt={article.title} />
-        </div>
-      )}
-      
-      <div className="article-content">
-        {article.category && (
-          <div className="article-category">{article.category}</div>
-        )}
-        
-        <h3 className="article-title">
+    <article className={`article-card ${isSidebar ? 'sidebar' : ''}`}>
+      <div className="article-text">
+        <h3 className={`article-title ${isSidebar ? 'sidebar' : ''}`}>
           <a href={`/article/${article.id}`}>{article.title}</a>
         </h3>
-        
-        {(variant === 'featured' || variant === 'default') && (
-          <div className="article-summary">{article.summary}</div>
+        {!isSidebar && (
+          <p className="article-summary">{article.summary}</p>
         )}
-        
-        <div className="article-meta">
-          {article.timestamp && (
-            <span className="article-timestamp">{article.timestamp}</span>
-          )}
-          
-          {article.author && (
-            <span className="article-author">
-              di {article.author}
-            </span>
-          )}
-        </div>
+      </div>
+      <div className="article-image">
+        <img src={article.imageUrl} alt={article.title} />
       </div>
     </article>
   );

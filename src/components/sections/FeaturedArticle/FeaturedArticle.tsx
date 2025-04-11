@@ -27,10 +27,6 @@ const FeaturedArticle: React.FC<FeaturedArticleProps> = ({ article }) => {
                 <span className="bullet"></span>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, ipsa.</span>
               </li>
-              <li>
-                <span className="bullet"></span>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quis quo necessitatibus!</span>
-              </li>
             </ul>
           </div>
         </div>

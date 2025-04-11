@@ -8,6 +8,14 @@ export interface Article {
     timestamp: string;
     author?: string;
   }
+
+  export interface Podcast {
+    id: number;
+    title: string;
+    duration: string;
+    date: string;
+    imageUrl?: string;
+  }
   
   export interface NewsItem {
     id: number;

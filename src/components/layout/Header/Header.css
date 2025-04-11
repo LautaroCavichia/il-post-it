@@ -1,54 +1,103 @@
- .header-container { 
-  
-  .site-header {
-      height: var(--header-height);
-      display: flex;
-      align-items: center;
-      padding: 3.5rem 1rem;
-    }
-    
-    .site-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
+.header-container {
+  width: 100%;
 
-    }
-    
-    .header-left, .header-right {
-      display: flex;
-      align-items: center;
-    }
-    
-    .logo-container {
-      text-align: center;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-    
-    .site-logo {
-      height: 4.5rem;
-    }
-    
-    .header-links, .action-links {
-      display: flex;
-      gap: 15px;
-    }
-    
-    .header-link, .action-link {
-      font-size: 14px;
-      font-family: 'Red Hat Text', sans-serif;
-      font-weight: 500;
-    }
-    
-    .action-link.highlight {
-      background-color: var(--accent-color);
-      padding: 5px 40px;
-      border-radius: 5px;
-    }
 
-    .action-link.highlight.none {
-      background-color: transparent;
-      padding: 5px 4px;
-    }
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+  background: white;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu-toggle,
+.user-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.header-links,
+.action-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-link,
+.action-link {
+  font-size: 14px;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.action-link.highlight {
+  background-color: var(--accent-color, #ffe150);
+  padding: 5px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.action-link.highlight:hover {
+  background-color: var(--accent-color-hover, #fddc00);
+
+  text-decoration: none;
+}
+
+.action-link.highlight.none {
+  background-color: transparent;
+  padding: 5px 4px;
+}
+
+.action-link.highlight.none:hover {
+  text-decoration: underline;
+}
+
+.logo-container {
+  padding: 1rem;
+}
+
+.site-logo {
+  height: 5rem;
+}
+
+@media (max-width: 768px) {
+  .site-header .container {
+    justify-content: space-between;
   }
+
+  .header-left .header-links,
+  .header-right .action-links a:not(.action-link.highlight),
+  .action-link.highlight.none {
+    display: none;
+  }
+
+  .logo-container {
+    margin: 0 auto;
+  }
+
+  .site-logo {
+    height: 3.5rem;
+  }
+}
+}

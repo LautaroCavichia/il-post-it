@@ -3,40 +3,45 @@
   .main-navigation {
       padding-top:  0.5rem;
       border-bottom: 1px solid var(--border-color);
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
     .my-nav-container {
       display: flex;
       flex: 1;
       justify-content: space-between;
       align-items: center;
+      padding: 0rem 2rem;
     }
     
     .nav-list {
       justify-content: space-around;
       display: flex;
       width: 100%;
+      margin: 5px 0px;
       list-style: none;
-      overflow-x: auto;
+      overflow-x: hidden;
       white-space: nowrap;
-      padding: 10px 0px;
+      padding: 5px 0px;
+
     }
     
     .nav-item {
-      margin-right: 15px;
+      margin-right: 10px;
 
       @media screen and (max-width: 1280px) {
-        margin-right: 7px;
-        
+        margin-right: 5px;
       }
     }
     
-    .nav-link {
+    .nav-link {   
       font-weight: 600;
       font-size: 0.85rem;
       font-family: 'Red Hat Text', sans-serif;
 
       @media screen and (max-width: 1280px) {
-        font-size: 11px;
+        font-size: 0.68rem;
         
       }
     }

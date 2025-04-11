@@ -1,4 +1,4 @@
-import { Article, NewsItem, NavigationItem } from '../types';
+import { Article, NewsItem, NavigationItem, Podcast } from '../types';
 
 const categories = [
   'ITALIA', 'MONDO', 'POLITICA', 'TECNOLOGIA', 
@@ -38,14 +38,14 @@ const generateLoremIpsum = (sentences: number = 3): string => {
 
 // Generate random image URL from Lorem Picsum
 const generateRandomImageUrl = (width: number = 900, height: number = 600): string => {
-  return `https://placehold.co/${width}x${height}`;
+  return `https://placehold.co/${width}x${height}/gold/white?text={Lorem+Ipsum}`;
 };
 
 // Generate mock articles
 export const generateMockArticles = (count: number): Article[] => {
   return Array(count).fill(null).map((_, index) => ({
     id: index + 1,
-    title: generateLoremIpsum(1),
+    title: generateLoremIpsum(0.5),
     summary: generateLoremIpsum(2),
     content: generateLoremIpsum(8),
     imageUrl: generateRandomImageUrl(),
@@ -54,6 +54,19 @@ export const generateMockArticles = (count: number): Article[] => {
     author: Math.random() > 0.5 ? 'Lorem Author' : undefined
   }));
 };
+
+export const generateMockPodcasts = (count: number): Podcast[] => {
+  return Array(count).fill(null).map((_, index) => ({
+    id: index + 1,
+    title: generateLoremIpsum(0.5),
+    duration: `${Math.floor(Math.random() * 60)}:${Math.floor(Math.random() * 60)
+      .toString()
+      .padStart(2, '0')}`,
+    date: new Date(Date.now() - Math.floor(Math.random() * 10000000000)).toLocaleDateString(),
+    imageUrl: generateRandomImageUrl(300, 300)
+  }));
+}
+
 
 // Generate mock news items for the ticker
 export const generateNewsItems = (count: number): NewsItem[] => {

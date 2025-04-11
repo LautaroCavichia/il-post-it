@@ -1,17 +1,5 @@
 .article-grid {
-    display: grid;
-    gap: 20px;
-  }
-  
-  .article-grid-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-  
-  .article-grid-list .article-grid-item {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 15px;
-  }
-  
-  .article-grid-columns {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

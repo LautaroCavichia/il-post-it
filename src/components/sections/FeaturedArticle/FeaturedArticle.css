@@ -1,8 +1,9 @@
 /* src/components/sections/FeaturedArticle/FeaturedArticle.css */
 .featured-article {
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
   font-family: 'Georgia', serif;
-
+  border-bottom: 1px solid var(--border-color);
+  
 .featured-content-wrapper {
   display: flex;
   flex-direction: column;
@@ -15,7 +16,7 @@
 
   .featured-content {
     flex : 1;
-    padding-right: 20px;
+    padding-right: 2rem;
   }
   
   .featured-image {
@@ -25,7 +26,7 @@
 
 .featured-content {
   flex: 1;
-  padding: 20px;
+  padding: 1rem;
 }
 
 
@@ -83,11 +84,14 @@
 
 .featured-image {
   flex: 2;
+  margin: 1.5rem 0;
+  
 }
 
 .featured-image img {
   width: 100%;
   height: 100%;
+  border-radius: 4px;
   object-fit: cover;
 }
 }
