@@ -9,6 +9,14 @@ export interface Article {
     author?: string;
   }
 
+  export interface Photo {
+    id: string | number;
+    imageUrl: string;
+    title: string;
+    description: string;
+    category?: string;
+  }
+
   export interface Podcast {
     id: number;
     title: string;

@@ -1,0 +1,124 @@
+/* src/components/sections/Comics.css */
+.comics-section {
+    width: 100%;
+    margin-bottom: 40px;
+    font-family: serif;
+  
+  
+  .comics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .comics-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    color: #000;
+  }
+  
+  .comics-controls {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .comics-control {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .comics-control.prev {
+    background-color: #9d9d9d;
+  }
+  
+  .comics-control.next {
+    background-color: #333;
+  }
+  
+  .arrow-left, .arrow-right {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+  }
+  
+  .arrow-left {
+    transform: rotate(135deg);
+    left: 2px;
+  }
+  
+  .arrow-right {
+    transform: rotate(-45deg);
+    right: 1px;
+  }
+  
+  .comics-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .comic-strip {
+    flex: 4;
+    display: flex;
+  }
+  
+  .comic-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .more-comics {
+    flex: 1;
+    background-color: #ffd800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .more-comics-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    color: #000;
+  }
+  
+  .more-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .comics-content {
+      flex-direction: column;
+    }
+    
+    .more-comics {
+      height: 80px;
+    }
+  }}

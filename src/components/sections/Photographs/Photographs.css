@@ -1,0 +1,124 @@
+/* src/components/sections/Photographs.css */
+.Photographs-section {
+    width: 100%;
+    margin-bottom: 40px;
+    font-family: serif;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+
+  
+  .Photographs-header {
+    margin-bottom: 20px;
+  }
+  
+  .Photographs-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    color: #000;
+  }
+  
+  .Photographs-content {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .Photographs-item {
+    flex: 1;
+    position: relative;
+  }
+  
+  .foto-image-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .foto-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .foto-more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #ffd800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    width: 80px;
+  }
+  
+  .foto-more-icon {
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  
+  .camera-icon {
+    color: white;
+    font-size: 16px;
+  }
+  
+  .foto-more-text {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .foto-arrow {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .arrow-right {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(-45deg);
+    position: relative;
+    right: 1px;
+  }
+  
+  .foto-caption {
+    padding: 5px 0;
+  }
+  
+  .foto-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+  }
+  
+  .foto-description {
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.3;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .Photographs-content {
+      flex-direction: column;
+    }
+    
+    .foto-image {
+      height: 250px;
+    }
+  }
+}

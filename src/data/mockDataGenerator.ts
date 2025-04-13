@@ -1,4 +1,4 @@
-import { Article, NewsItem, NavigationItem, Podcast } from '../types';
+import { Article, NewsItem, NavigationItem, Podcast, Photo } from '../types';
 
 const categories = [
   'ITALIA', 'MONDO', 'POLITICA', 'TECNOLOGIA', 
@@ -54,6 +54,15 @@ export const generateMockArticles = (count: number): Article[] => {
     author: Math.random() > 0.5 ? 'Lorem Author' : undefined
   }));
 };
+
+export const generateMockPhotos = (count: number): Photo[] => {
+  return Array(count).fill(null).map((_, index) => ({
+    id: index + 1,
+    imageUrl: generateRandomImageUrl(300, 300),
+    title: generateLoremIpsum(0.5),
+    description: generateLoremIpsum(1)
+  }));
+}
 
 export const generateMockPodcasts = (count: number): Podcast[] => {
   return Array(count).fill(null).map((_, index) => ({
