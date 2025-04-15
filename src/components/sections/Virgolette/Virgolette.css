@@ -1,48 +1,64 @@
-/* Virgolette.css */
-.virgolette-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 4rem;
-    font-family: 'Times New Roman', Times, serif;
-    border-bottom: 1px solid var(--border-color-light);
-  
-  .virgolette-header {
-    background-color: var(--accent-color);
-    padding: 0px 75px;
-    margin-bottom: 20px;
-    text-align: center;
+.virgolette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 4rem 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  border-bottom: 1px solid var(--border-color-light, #e0e0e0);
+}
+
+.virgolette__header {
+  background-color: var(--accent-color, #ffd800);
+  padding: 0 75px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.virgolette__heading {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.virgolette__content {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.virgolette__quote {
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 0 0 16px 0;
+  color: #000;
+}
+
+.virgolette__attribution {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--border-color, #757575);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .virgolette {
+    padding: 2rem 1rem;
   }
   
-  .virgolette-header span {
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 0;
-    margin: 0;
+  .virgolette__header {
+    padding: 0 40px;
   }
   
-  .virgolette-content {
-    text-align: center;
-    width: 100%;
+  .virgolette__quote {
+    font-size: 1.5rem;
   }
-  
-  .virgolette-quote {
-    font-family: "Noto Serif", Georgia, serif;
-    font-size: 1.8rem;
-    line-height: 1.2;
-    font-weight: 500;
-    margin: 0 0 16px 0;
-    color: #000;
-  }
-  
-  .virgolette-attribution {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    color: var(--border-color);
-    margin: 0;
-  }}
+}

@@ -1,6 +1,6 @@
-// src/components/sections/Stories.tsx
 import React, { useState, useRef, useEffect } from 'react';
 import { Article } from '../../../types';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Stories.css';
 
 interface StoriesProps {
@@ -12,22 +12,22 @@ const Stories: React.FC<StoriesProps> = ({
 }) => {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
-  
+  const maxIndex = Math.max(0, stories.length - 6); // Show 6 items at once
+
   const handlePrev = () => {
     setCurrentItemIndex((prevIndex) => {
       const newIndex = prevIndex - 1;
       return newIndex < 0 ? 0 : newIndex;
     });
   };
-  
+
   const handleNext = () => {
     setCurrentItemIndex((prevIndex) => {
       const newIndex = prevIndex + 1;
-      const maxIndex = Math.max(0, stories.length - 6); // Show 6 items at once
       return newIndex > maxIndex ? maxIndex : newIndex;
     });
   };
-  
+
   useEffect(() => {
     if (trackRef.current) {
       const storyWidth = 180; // Width of each story card + margin
@@ -36,34 +36,55 @@ const Stories: React.FC<StoriesProps> = ({
   }, [currentItemIndex]);
 
   return (
-    <section className="stories-section">
-      <div className="stories-header">
-        <div className="stories-title-container">
-          <h3 className="stories-title">STORIE/IDEE</h3>
-          <div className="stories-subtitle">Da leggere con calma, e da pensarci su</div>
+    <section className="stories">
+      <header className="stories__header">
+        <div className="stories__title-wrapper">
+          <h2 className="stories__title">STORIE/IDEE</h2>
+          <p className="stories__subtitle">Da leggere con calma, e da pensarci su</p>
         </div>
-        <div className="stories-controls">
-          {currentItemIndex > 0 && (
-            <button className="stories-control prev" onClick={handlePrev}>
-              <span className="arrow-left"></span>
-            </button>
-          )}
-          <button className="stories-control next" onClick={handleNext}>
-            <span className="arrow-right"></span>
+        <div className="stories__controls">
+          <button 
+            className="stories__control stories__control--prev" 
+            onClick={handlePrev} 
+            disabled={currentItemIndex === 0}
+            aria-label="Previous stories"
+          >
+            <span className="stories__arrow stories__arrow--left" aria-hidden="true"></span>
+          </button>
+          <button 
+            className="stories__control stories__control--next" 
+            onClick={handleNext} 
+            disabled={currentItemIndex >= maxIndex}
+            aria-label="Next stories"
+          >
+            <span className="stories__arrow stories__arrow--right" aria-hidden="true"></span>
           </button>
         </div>
-      </div>
-      <div className="stories-container">
-        <div className="stories-track" ref={trackRef}>
+      </header>
+      
+      <div className="stories__container">
+        <div 
+          className="stories__track" 
+          ref={trackRef}
+          role="list"
+          aria-live="polite"
+        >
           {stories.map((story) => (
-            <div key={story.id} className="story-card">
-              <div className="story-image">
-                <img src={story.imageUrl} alt={story.title} />
-              </div>
-              <h4 className="story-title">{story.title}</h4>
-              <p className="story-excerpt">{story.summary}</p>
-              {story.author && <div className="story-author">di {story.author}</div>}
-            </div>
+            <article key={story.id} className="stories__card" role="listitem">
+              <figure className="stories__figure">
+                <img 
+                  src={story.imageUrl} 
+                  alt="" 
+                  className="stories__image"
+                  aria-hidden="true" 
+                />
+              </figure>
+              <h3 className="stories__card-title">
+                <a href="#" className="stories__link">{story.title}</a>
+              </h3>
+              <p className="stories__excerpt">{story.summary}</p>
+              {story.author && <address className="stories__author">di {story.author}</address>}
+            </article>
           ))}
         </div>
       </div>

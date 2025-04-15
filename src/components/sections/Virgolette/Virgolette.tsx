@@ -1,23 +1,21 @@
 import React from 'react';
-
 import './Virgolette.css';
 
 const Virgolette: React.FC = () => {
-    return (
-      <div className="virgolette-container">
-        <div className="virgolette-header">
-          <span>Virgolette</span>
-        </div>
-        <div className="virgolette-content">
-          <h2 className="virgolette-quote">«Lorem ipsum dolor sit amet»</h2>
-          <p className="virgolette-attribution">
-            Consectetur adipiscing elit sed do eiusmod tempor
-            <br />
-            incididunt ut labore et dolore magna aliqua
-          </p>
-        </div>
-      </div>
-    );
-  };
-  
-  export default Virgolette;
+  return (
+    <section className="virgolette">
+      <header className="virgolette__header">
+        <h2 className="virgolette__heading">Virgolette</h2>
+      </header>
+      
+      <blockquote className="virgolette__content">
+        <h3 className="virgolette__quote">«Lorem ipsum dolor sit amet»</h3>
+        <footer className="virgolette__attribution">
+          <cite>Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</cite>
+        </footer>
+      </blockquote>
+    </section>
+  );
+};
+
+export default Virgolette;

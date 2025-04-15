@@ -16,49 +16,49 @@ const OtherStories: React.FC<OtherStoriesProps> = ({
   if (stories.length < 8) {
     console.warn('OtherStories component requires at least 8 stories');
   }
-  
+
   // Get the first story for the featured spot (with image)
   const featuredStory = stories[0] || null;
-  
+
   // Get the rest of the stories for the right columns
   const rightColumnStories = stories.slice(1, 8) || [];
 
   return (
-    <section className="altre-storie-section">
-      <div className="altre-storie-header">
-        <h3 className="altre-storie-title">{title}</h3>
+    <section className="other-stories">
+      <div className="other-stories__header">
+        <h3 className="other-stories__title">{title}</h3>
       </div>
-      
-      <div className="altre-storie-content">
-        {/* Left column with featured story */}
-        <div className="altre-storie-featured">
+
+      <div className="other-stories__content">
+        <div className="other-stories__featured">
           {featuredStory && (
             <>
-              <h4 className="featured-title">{featuredStory.title}</h4>
-              <p className="featured-excerpt">{featuredStory.summary}</p>
-              <div className="featured-image">
+              <h4 className="other-stories__featured-title">{featuredStory.title}</h4>
+              <p className="other-stories__featured-excerpt">{featuredStory.summary}</p>
+              <div className="other-stories__featured-image">
                 <img src={featuredStory.imageUrl} alt={featuredStory.title} />
               </div>
             </>
           )}
         </div>
-        
-        {/* Right columns with smaller stories */}
-        <div className="altre-storie-list">
-          <div className="altre-storie-column">
-            {rightColumnStories.slice(0, 3).map((story, index) => (
-              <div key={story.id} className="altre-storie-item">
-                <h4 className="item-title">{story.title}</h4>
-                <p className="item-excerpt">{story.summary}</p>
+
+        <div className="other-stories__list">
+          <div className="other-stories__column">
+            {rightColumnStories.slice(0, 3).map((story) => (
+              <div key={story.id} className="other-stories__item">
+                <h4 className="other-stories__item-title">{story.title}</h4>
+                <p className="other-stories__item-excerpt">{story.summary}</p>
               </div>
             ))}
           </div>
-          
-          <div className="altre-storie-column">
+
+          <div className="other-stories__column">
             {rightColumnStories.slice(3, 7).map((story, index) => (
-              <div key={story.id} className="altre-storie-item">
-                <h4 className="item-title">{story.title}</h4>
-                {index < 3 && <p className="item-excerpt">{story.summary}</p>}
+              <div key={story.id} className="other-stories__item">
+                <h4 className="other-stories__item-title">{story.title}</h4>
+                {index < 3 && (
+                  <p className="other-stories__item-excerpt">{story.summary}</p>
+                )}
               </div>
             ))}
           </div>

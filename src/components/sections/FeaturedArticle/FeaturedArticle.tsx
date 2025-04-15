@@ -1,4 +1,3 @@
-// src/components/sections/FeaturedArticle/FeaturedArticle.tsx
 import React from 'react';
 import { Article } from '../../../types';
 import './FeaturedArticle.css';
@@ -9,33 +8,36 @@ interface FeaturedArticleProps {
 
 const FeaturedArticle: React.FC<FeaturedArticleProps> = ({ article }) => {
   return (
-    <div className="featured-article">
-      <div className="featured-content-wrapper">
-        <div className="featured-content">
-          <div className="featured-tag">LIVE</div>
-          <h1 className="featured-title">{article.title}</h1>
-          <div className="featured-summary">{article.summary}</div>
-          
-          <div className="updates-section">
-            <h2 className="updates-title">Gli ultimi aggiornamenti</h2>
-            <ul className="updates-list">
-              <li>
-                <span className="bullet"></span>
+    <article className="featured-article">
+      <div className="featured-article__wrapper">
+        <section className="featured-article__content" aria-labelledby="featured-article-title">
+          <header className="featured-article__header">
+            <span className="featured-article__tag" aria-label="Live">LIVE</span>
+            <h1 id="featured-article-title" className="featured-article__title">{article.title}</h1>
+          </header>
+
+          <p className="featured-article__summary">{article.summary}</p>
+
+          <section className="featured-article__updates">
+            <h2 className="featured-article__updates-title">Gli ultimi aggiornamenti</h2>
+            <ul className="featured-article__updates-list">
+              <li className="featured-article__updates-item">
+                <span className="featured-article__bullet" aria-hidden="true"></span>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
               </li>
-              <li>
-                <span className="bullet"></span>
+              <li className="featured-article__updates-item">
+                <span className="featured-article__bullet" aria-hidden="true"></span>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, ipsa.</span>
               </li>
             </ul>
-          </div>
-        </div>
-        
-        <div className="featured-image">
+          </section>
+        </section>
+
+        <figure className="featured-article__image">
           <img src={article.imageUrl} alt={article.title} />
-        </div>
+        </figure>
       </div>
-    </div>
+    </article>
   );
 };
 

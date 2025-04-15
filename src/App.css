@@ -9,12 +9,11 @@
     --light-bg: #f8f8f8;
     --header-height: 70px;
     --red:#ba1212;
-    --red-light:#f00;
+    --red-light:rgb(198, 16, 16);
   }
   
   * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
   }
   
@@ -22,9 +21,7 @@
     font-family: 'Noto Serif', serif;
     line-height: 1.6;
     color: var(--primary-color);
-    max-width: 1300px;
-    margin: 0 auto; /* <-- this centers the body horizontally */
-    padding: 0 1rem; /* optional: adds some horizontal spacing on small screens */
+
   }
   .row {
     display: flex;
@@ -32,16 +29,11 @@
     margin: 0px;
   }
   
-  .col-md-8 {
-    width: 66.66%;
-    padding: 0 15px;
+  .col-lg-8 {
     border-right: 1px solid var(--border-color);
   }
   
-  .col-md-4 {
-    width: 33.33%;
-    padding: 0 15px;
-  }
+
   
   @media (max-width: 768px) {
     .col-md-8, .col-md-4 {

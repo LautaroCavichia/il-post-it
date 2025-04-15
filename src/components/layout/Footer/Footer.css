@@ -1,110 +1,144 @@
-/* src/components/layout/Footer.css */
-.site-footer {
-    width: 100%;
-    background-color: #fff;
-    border-top: 1px solid #e0e0e0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    padding: 12px 0;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .footer-logo {
-    margin-right: 20px;
-  }
-  
-  .footer-logo-image {
-    height: 30px;
-    width: auto;
-  }
-  
-  .footer-links {
-    display: flex;
+/* src/components/layout/Footer/Footer.css */
+.footer {
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 12px 0;
+}
+
+.footer__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo section */
+.footer__logo {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.footer__logo-image {
+  height: 30px;
+  width: auto;
+}
+
+/* Middle section with nav and info */
+.footer__middle {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.footer__nav {
+  margin-bottom: 5px;
+}
+
+.footer__nav-list {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.footer__nav-link:hover,
+.footer__nav-link:focus {
+  text-decoration: underline;
+}
+
+/* Copyright info */
+.footer__info {
+  color: #666;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  margin: 0;
+  display: block;
+}
+
+/* Subscribe button */
+.footer__subscribe {
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.footer__subscribe-button {
+  background-color: #ffd800;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  color: #000;
+  transition: background-color 0.2s ease;
+}
+
+.footer__subscribe-button:hover,
+.footer__subscribe-button:focus {
+  background-color: #ffde33;
+  outline: none;
+}
+
+.footer__subscribe-button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .footer__container {
+    flex-direction: column;
     gap: 15px;
-    flex-grow: 1;
   }
   
-  .footer-link {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
+  .footer__logo {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
   
-  .footer-link:hover {
-    text-decoration: underline;
+  .footer__middle {
+    width: 100%;
+    align-items: center; 
   }
   
-  .footer-info {
-    flex-grow: 1;
+  .footer__nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 15px;
+  }
+  
+  .footer__info {
     text-align: center;
-    color: #666;
-    font-size: 12px;
-    white-space: nowrap;
   }
   
-  .footer-subscribe {
-    margin-left: 20px;
+  .footer__subscribe {
+    margin-left: 0;
+    width: 100%;
+    max-width: 200px;
   }
   
-  .subscribe-button {
-    background-color: #ffd800;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 15px;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    color: #000;
+  .footer__subscribe-button {
+    width: 100%;
   }
-  
-  .subscribe-button:hover {
-    background-color: #ffde33;
-  }
-  
-  /* Media queries for responsive design */
-  @media (max-width: 1024px) {
-    .footer-container {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    
-    .footer-links {
-      order: 2;
-      justify-content: center;
-      margin: 10px 0;
-    }
-    
-    .footer-info {
-      order: 3;
-      width: 100%;
-      margin: 5px 0;
-    }
-    
-    .footer-subscribe {
-      order: 4;
-      margin: 10px 0;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .footer-links {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px 15px;
-    }
-    
-    .footer-info {
-      font-size: 11px;
-    }
-  }
+}

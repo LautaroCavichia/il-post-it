@@ -1,15 +1,36 @@
-.header-container {
+/* src/components/layout/Header/Header.css */
+.header-wrapper {
   width: 100%;
-
-
-.site-header {
-  display: flex;
-  align-items: center;
-  padding: 0rem 1rem;
-  background: white;
+  transition: all 0.3s ease;
 }
 
-.site-header .container {
+.header-wrapper.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.header--scrolled {
+  padding: 0.3rem 1rem;
+}
+
+.header--scrolled .header__logo-image {
+  height: 3rem;
+  transition: height 0.3s ease;
+}
+
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,29 +39,41 @@
   margin: 0 auto;
 }
 
-.header-left,
-.header-right {
+.header__section {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.menu-toggle,
-.user-button {
+.header__menu-toggle,
+.header__user-button {
   background: none;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header-links,
-.action-links {
+.header__menu-toggle:focus,
+.header__user-button:focus {
+  outline: 2px solid var(--accent-color, #ffe150);
+  border-radius: 4px;
+}
+
+.header__nav-list,
+.header__actions-list {
   display: flex;
   gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.header-link,
-.action-link {
+.header__nav-link,
+.header__action-link {
   font-size: 14px;
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 500;
@@ -51,53 +84,116 @@
   gap: 0.4rem;
 }
 
-.action-link.highlight {
+.header__nav-link:hover,
+.header__nav-link:focus,
+.header__action-link:hover,
+.header__action-link:focus {
+  text-decoration: underline;
+}
+
+.header__action-link--highlight {
   background-color: var(--accent-color, #ffe150);
   padding: 5px 20px;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.2s ease;
 }
 
-.action-link.highlight:hover {
+.header__action-link--highlight:hover,
+.header__action-link--highlight:focus {
   background-color: var(--accent-color-hover, #fddc00);
-
   text-decoration: none;
 }
 
-.action-link.highlight.none {
+.header__action-link--plain {
   background-color: transparent;
   padding: 5px 4px;
 }
 
-.action-link.highlight.none:hover {
+.header__action-link--plain:hover,
+.header__action-link--plain:focus {
   text-decoration: underline;
 }
 
-.logo-container {
+.header__logo {
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.header__logo-image {
+  height: 5rem;
+  transition: height 0.3s ease;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 80px; /* Adjust based on your header height when scrolled */
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem;
 }
 
-.site-logo {
-  height: 5rem;
+.mobile-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.mobile-menu__item {
+  margin-bottom: 1rem;
+}
+
+.mobile-menu__link {
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.mobile-menu__link--highlight {
+  background-color: var(--accent-color, #ffe150);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Media queries */
 @media (max-width: 768px) {
-  .site-header .container {
+  .header__container {
     justify-content: space-between;
   }
-
-  .header-left .header-links,
-  .header-right .action-links a:not(.action-link.highlight),
-  .action-link.highlight.none {
+  
+  .header__section--left .header__nav,
+  .header__section--right .header__actions-list li:not(:last-child) {
     display: none;
   }
-
-  .logo-container {
+  
+  .header__logo {
     margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
-
-  .site-logo {
-    height: 3.5rem;
+  
+  .header__logo-image {
+    height: 3rem;
   }
-}
+  
+  .header--scrolled .header__logo-image {
+    height: 2.5rem;
+  }
+  
+  .header__section--left,
+  .header__section--right {
+    position: relative;
+    z-index: 2;
+  }
 }

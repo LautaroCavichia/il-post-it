@@ -1,7 +1,107 @@
 .homepage {
-
-.my-container {
-    margin: 0;
+  /* Base styles */
 }
 
+/* Main container styles */
+.homepage__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.homepage__main {
+  width: 100%;
+}
+
+.homepage__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.homepage__articles {
+  margin-bottom: 2rem;
+}
+
+.homepage__articles-section {
+  margin-bottom: 2rem;
+}
+
+/* Sidebar styles */
+.homepage__sidebar {
+  /* Sidebar general styles */
+}
+
+.homepage__sidebar-component {
+  margin-bottom: 2rem;
+}
+
+/* Mobile sidebar specific styles */
+.homepage__sidebar-mobile {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.homepage__sidebar-row {
+  display: flex;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 1.5rem;
+}
+
+.homepage__sidebar-column {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Section specific styles */
+.homepage__stories,
+.homepage__comics,
+.homepage__other-stories,
+.homepage__photos {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Custom breakpoint for screens smaller than 769px */
+@media (max-width: 769px) {
+  .d-md-block {
+    display: none !important;
+  }
+  
+  .d-md-none {
+    display: block !important;
+  }
+  
+  .homepage__sidebar-column .flash-news-container,
+  .homepage__sidebar-column .in-evidenza-container {
+    margin-bottom: 1rem;
+  }
+  
+  .homepage__sidebar-column .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .homepage__sidebar-column .flash-news-item,
+  .homepage__sidebar-column .highlighted-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .homepage__sidebar-column .flash-news-item h4,
+  .homepage__sidebar-column .highlighted-item h4 {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Override Bootstrap's default breakpoints for our custom breakpoint */
+@media (min-width: 770px) {
+  .d-md-block {
+    display: block !important;
+  }
+  
+  .d-md-none {
+    display: none !important;
+  }
 }

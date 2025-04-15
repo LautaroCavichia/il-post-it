@@ -1,7 +1,8 @@
-// src/components/sections/Sidebar.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Article } from '../../../types';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sidebar.css';
+import { getMockAlt } from '../../../data/mockDataGenerator';
 
 interface SidebarProps {
   highlightedArticles: Article[];
@@ -14,25 +15,51 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const [highlightedPage, setHighlightedPage] = useState(0);
   const [flashPage, setFlashPage] = useState(0);
+  const [highlightedTransitioning, setHighlightedTransitioning] = useState(false);
+  const [flashTransitioning, setFlashTransitioning] = useState(false);
   
   const articlesPerPage = 3;
   const maxHighlightedPages = Math.ceil(highlightedArticles.length / articlesPerPage);
   const maxFlashPages = Math.ceil(flashNews.length / articlesPerPage);
 
   const nextHighlighted = () => {
-    setHighlightedPage((prev) => (prev + 1) % maxHighlightedPages);
+    setHighlightedTransitioning(true);
+    setTimeout(() => {
+      setHighlightedPage((prev) => (prev + 1) % maxHighlightedPages);
+      setTimeout(() => {
+        setHighlightedTransitioning(false);
+      }, 50);
+    }, 300);
   };
 
   const prevHighlighted = () => {
-    setHighlightedPage((prev) => (prev === 0 ? maxHighlightedPages - 1 : prev - 1));
+    setHighlightedTransitioning(true);
+    setTimeout(() => {
+      setHighlightedPage((prev) => (prev === 0 ? maxHighlightedPages - 1 : prev - 1));
+      setTimeout(() => {
+        setHighlightedTransitioning(false);
+      }, 50);
+    }, 300);
   };
 
   const nextFlash = () => {
-    setFlashPage((prev) => (prev + 1) % maxFlashPages);
+    setFlashTransitioning(true);
+    setTimeout(() => {
+      setFlashPage((prev) => (prev + 1) % maxFlashPages);
+      setTimeout(() => {
+        setFlashTransitioning(false);
+      }, 50);
+    }, 300);
   };
 
   const prevFlash = () => {
-    setFlashPage((prev) => (prev === 0 ? maxFlashPages - 1 : prev - 1));
+    setFlashTransitioning(true);
+    setTimeout(() => {
+      setFlashPage((prev) => (prev === 0 ? maxFlashPages - 1 : prev - 1));
+      setTimeout(() => {
+        setFlashTransitioning(false);
+      }, 50);
+    }, 300);
   };
 
   const getPageArticles = (articles: Article[], page: number) => {
@@ -43,57 +70,85 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-section highlighted">
-        <div className="sidebar-header">
-          <h4 className="sidebar-title">IN EVIDENZA</h4>
-          <div className="sidebar-controls">
-            <button className="sidebar-control prev" onClick={prevHighlighted}>
-              <span className="arrow-left"></span>
+      <section className="sidebar__section sidebar__section--highlighted">
+        <header className="sidebar__header">
+          <h2 className="sidebar__title">IN EVIDENZA</h2>
+          <div className="sidebar__controls">
+            <button 
+              className="sidebar__control sidebar__control--prev" 
+              onClick={prevHighlighted}
+              aria-label="Previous highlighted articles"
+            >
+              <span className="sidebar__arrow sidebar__arrow--left" aria-hidden="true"></span>
             </button>
-            <button className="sidebar-control next" onClick={nextHighlighted}>
-              <span className="arrow-right"></span>
+            <button 
+              className="sidebar__control sidebar__control--next" 
+              onClick={nextHighlighted}
+              aria-label="Next highlighted articles"
+            >
+              <span className="sidebar__arrow sidebar__arrow--right" aria-hidden="true"></span>
             </button>
           </div>
-        </div>
-        <div className="sidebar-content">
+        </header>
+        <div className={`sidebar__content ${highlightedTransitioning ? 'sidebar__content--transitioning' : ''}`}>
           {getPageArticles(highlightedArticles, highlightedPage).map((article) => (
-            <div key={article.id} className="article-card">
-              <div className="article-text">
-                <h3 className="article-title">{article.title}</h3>
+            <article key={article.id} className="sidebar__article">
+              <div className="sidebar__article-text">
+                <h3 className="sidebar__article-title">
+                  <a href="#" className="sidebar__article-link">{article.title}</a>
+                </h3>
               </div>
-              <div className="article-image">
-                <img src={article.imageUrl} alt={article.title} />
-              </div>
-            </div>
+              <figure className="sidebar__article-figure">
+                <img 
+                  src={article.imageUrl} 
+                  alt={getMockAlt(article.title)}
+                  className="sidebar__article-image"
+                />
+              </figure>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
       
-      <div className="sidebar-section flashes">
-        <div className="sidebar-header">
-          <h4 className="sidebar-title">FLASHES</h4>
-          <div className="sidebar-controls">
-            <button className="sidebar-control prev" onClick={prevFlash}>
-              <span className="arrow-left"></span>
+      <section className="sidebar__section sidebar__section--flashes">
+        <header className="sidebar__header">
+          <h2 className="sidebar__title">FLASHES</h2>
+          <div className="sidebar__controls">
+            <button 
+              className="sidebar__control sidebar__control--prev" 
+              onClick={prevFlash}
+              aria-label="Previous flash news"
+            >
+              <span className="sidebar__arrow sidebar__arrow--left" aria-hidden="true"></span>
             </button>
-            <button className="sidebar-control next" onClick={nextFlash}>
-              <span className="arrow-right"></span>
+            <button 
+              className="sidebar__control sidebar__control--next" 
+              onClick={nextFlash}
+              aria-label="Next flash news"
+            >
+              <span className="sidebar__arrow sidebar__arrow--right" aria-hidden="true"></span>
             </button>
           </div>
-        </div>
-        <div className="sidebar-content">
+        </header>
+        <div className={`sidebar__content ${flashTransitioning ? 'sidebar__content--transitioning' : ''}`}>
           {getPageArticles(flashNews, flashPage).map((article) => (
-            <div key={article.id} className="article-card">
-              <div className="article-text">
-                <h3 className="article-title">{article.title}</h3>
+            <article key={article.id} className="sidebar__article">
+              <div className="sidebar__article-text">
+                <h3 className="sidebar__article-title">
+                  <a href="#" className="sidebar__article-link">{article.title}</a>
+                </h3>
               </div>
-              <div className="article-image">
-                <img src={article.imageUrl} alt={article.title} />
-              </div>
-            </div>
+              <figure className="sidebar__article-figure">
+                <img 
+                  src={article.imageUrl} 
+                  alt={getMockAlt(article.title)}
+                  className="sidebar__article-image"
+                />
+              </figure>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
     </aside>
   );
 };

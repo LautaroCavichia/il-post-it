@@ -7,7 +7,7 @@ const categories = [
 ];
 
 const timestamps = [
-  '08:08', '07:47', '23:08', '22:15', '21:55', '17:11'
+  '08:08', '07:47', '23:08', '22:15', '21:55', '17:11', 
 ];
 
 // Generate a random lorem ipsum paragraph
@@ -36,9 +36,27 @@ const generateLoremIpsum = (sentences: number = 3): string => {
   return result.trim();
 };
 
+export function getMockAlt(title: string): string {
+  const words = title.split(' ').filter(w => w.length > 2);
+  const randomIndex = Math.floor(Math.random() * words.length);
+  const word = words[randomIndex] || 'article';
+
+  const variations = [
+    `Image related to ${word}`,
+    `Illustration for ${word}`,
+    `Visual for ${word}`,
+    `Featured image: ${word}`,
+    `Cover showing ${word}`
+  ];
+
+  const variationIndex = Math.floor(Math.random() * variations.length);
+  return variations[variationIndex];
+}
+
 // Generate random image URL from Lorem Picsum
-const generateRandomImageUrl = (width: number = 900, height: number = 600): string => {
-  return `https://placehold.co/${width}x${height}/gold/white?text={Lorem+Ipsum}`;
+const generateRandomImageUrl = (width: number = 1280, height: number = 720): string => {
+  // return `https://placehold.co/${width}x${height}/gold/white?text={Lorem+Ipsum}`;
+  return `https://picsum.photos/${width}/${height}?random=${Math.floor(Math.random() * 1000)}`;
 };
 
 // Generate mock articles

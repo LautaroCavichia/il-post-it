@@ -1,67 +1,16 @@
-/* src/components/sections/Sidebar.css */
-
 .sidebar {
   width: 100%;
   font-family: serif;
   transition: transform 0.3s ease;
+}
 
-.sidebar-section {
+.sidebar__section {
   margin-bottom: 24px;
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 8px;
 }
 
-
-.sidebar-control.next {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: #333;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-}
-
-.sidebar-control.prev {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: #9d9d9d;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-}
-
-.sidebar-control:hover {
-  background-color: #555;
-}
-
-.arrow-left, .arrow-right {
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 3px;
-  position: relative;
-}
-
-.arrow-left {
-  transform: rotate(135deg);
-  left: 2px;
-}
-
-.arrow-right {
-  transform: rotate(-45deg);
-  right: 1px;
-}
-
-
-.sidebar-header {
+.sidebar__header {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: space-between;
@@ -69,11 +18,12 @@
   padding: 10px 20px;
   border: 1px solid #e0e0e0;
   margin-bottom: 16px;
-  background-color:aliceblue;
+  background-color: aliceblue;
   border-radius: 10px;
 }
 
-.sidebar-title {
+.sidebar__title {
+  width: 100%;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -81,37 +31,84 @@
   color: #000;
 }
 
-.sidebar-controls {
+.sidebar__controls {
   display: flex;
   gap: 5px;
 }
 
-.sidebar-control {
-  width: 24px;
-  height: 24px;
+.sidebar__control {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background-color: #e0e0e0;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  color: #333;
+  padding: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.sidebar-control:hover {
-  background-color: #d0d0d0;
+.sidebar__control--prev {
+  background-color: #9d9d9d;
 }
 
-.sidebar-content {
+.sidebar__control--next {
+  background-color: #333;
+}
+
+.sidebar__control:hover {
+  background-color: #555;
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar__control:active {
+  transform: scale(0.95);
+}
+
+.sidebar__control:focus {
+  outline: 2px solid #018786;
+  outline-offset: 2px;
+}
+
+.sidebar__arrow {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.sidebar__arrow--left {
+  transform: rotate(135deg);
+  left: 2px;
+}
+
+
+.sidebar__arrow--right {
+  transform: rotate(-45deg);
+  right: 1px;
+}
+
+
+
+.sidebar__content {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.article-card {
+/* Add a fade effect for content transitions */
+.sidebar__content--transitioning {
+  opacity: 0;
+}
+
+.sidebar__article {
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -119,30 +116,56 @@
   border-bottom: 1px solid #f0f0f0;
 }
 
-.article-card:last-child {
+.sidebar__article:last-child {
   border-bottom: none;
 }
 
-.article-text {
+.sidebar__article-text {
   flex: 2;
 }
 
-.article-title {
+.sidebar__article-title {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   line-height: 1.3;
-  color: #000;
 }
 
-.article-image {
+.sidebar__article-link {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar__article-link:hover,
+.sidebar__article-link:focus {
+  text-decoration: underline;
+  color: #018786;
+}
+
+.sidebar__article-figure {
   flex: 1;
   max-width: 100px;
+  margin: 0;
 }
 
-.article-image img {
+.sidebar__article-image {
   width: 100%;
   height: 80px;
   object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .sidebar__article {
+    flex-direction: column;
+  }
+  
+  .sidebar__article-figure {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  
+  .sidebar__article-image {
+    height: 160px;
+  }
 }

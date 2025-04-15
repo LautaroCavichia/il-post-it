@@ -1,4 +1,4 @@
-// src/components/layout/Footer.tsx
+// src/components/layout/Footer/Footer.tsx
 import React from 'react';
 import './Footer.css';
 
@@ -11,28 +11,49 @@ const Footer: React.FC<FooterProps> = ({
   subscribeButtonText = "Abbonati"
 }) => {
   return (
-    <footer className="site-footer">
-      <div className="footer-container">
-        <div className="footer-logo">
-          <img src="/logo-s.png" alt="Il Post" className="footer-logo-image" />
+    <footer className="footer">
+      <div className="footer__container">
+        <div className="footer__logo">
+          <a href="/" aria-label="Il Post home page">
+            <img src="/logo-s.png" alt="Il Post" className="footer__logo-image" />
+          </a>
         </div>
         
-        <div className="footer-links">
-          <a href="/chi-siamo" className="footer-link">Chi Siamo</a>
-          <a href="/privacy" className="footer-link">Privacy</a>
-          <a href="/preferenze" className="footer-link">Gestisci le preferenze</a>
-          <a href="/condizioni" className="footer-link">Condizioni d'uso</a>
-          <a href="/pubblicita" className="footer-link">Pubblicità</a>
+        <div className="footer__middle">
+          <nav className="footer__nav">
+            <ul className="footer__nav-list">
+              <li className="footer__nav-item">
+                <a href="/chi-siamo" className="footer__nav-link">Chi Siamo</a>
+              </li>
+              <li className="footer__nav-item">
+                <a href="/privacy" className="footer__nav-link">Privacy</a>
+              </li>
+              <li className="footer__nav-item">
+                <a href="/preferenze" className="footer__nav-link">Gestisci le preferenze</a>
+              </li>
+              <li className="footer__nav-item">
+                <a href="/condizioni" className="footer__nav-link">Condizioni d'uso</a>
+              </li>
+              <li className="footer__nav-item">
+                <a href="/pubblicita" className="footer__nav-link">Pubblicità</a>
+              </li>
+            </ul>
+          </nav>
+          <div className="footer__info">
+            <small className="footer__copyright">
+              Il Post è una testata registrata presso il Tribunale di Milano, 419 del 28 settembre 2009 - ISSN 2610-9980
+            </small>
+          </div>
         </div>
         
-        <div className="footer-info">
-          <span className="footer-copyright">
-            Il Post è una testata registrata presso il Tribunale di Milano, 419 del 28 settembre 2009 - ISSN 2610-9980
-          </span>
-        </div>
-        
-        <div className="footer-subscribe">
-          <button className="subscribe-button">{subscribeButtonText}</button>
+        <div className="footer__subscribe">
+          <button
+            className="footer__subscribe-button"
+            type="button"
+            aria-label={subscribeButtonText}
+          >
+            {subscribeButtonText}
+          </button>
         </div>
       </div>
     </footer>

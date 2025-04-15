@@ -1,3 +1,4 @@
+/* src/components/common/ArticleCard/ArticleCard.css */
 .article-card {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -5,46 +6,52 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color-light);
   padding-bottom: 2rem;
-}
 
-.article-card.sidebar {
+.article-card--sidebar {
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border-color-light);
 }
 
-.article-text {
+.article-card__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.article-title {
+.article-card__title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.article-title.sidebar {
+.article-card__title--sidebar {
   font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 
-.article-summary {
+.article-card__summary {
   font-size: 14px;
   color: #333;
   margin-bottom: 10px;
 }
 
-.article-link a {
-  color: #0070f3;
-  font-weight: bold;
+.article-card__link {
+  color: inherit;
   text-decoration: none;
 }
 
-.article-image img {
+.article-card__link:hover,
+.article-card__link:focus {
+  text-decoration: underline;
+}
+
+.article-card__image-container {
+  margin: 0;
+  padding: 0;
+}
+
+.article-card__image {
   border-radius: 4px;
   width: 100%;
   height: auto;
   object-fit: cover;
+}
 }

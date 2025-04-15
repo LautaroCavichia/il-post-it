@@ -1,8 +1,8 @@
-// src/components/sections/Photographs.tsx
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Photographs.css';
 import { Photo } from '../../../types';
-
+import { getMockAlt } from '../../../data/mockDataGenerator';
 
 interface PhotographsProps {
   photos: Photo[];
@@ -13,39 +13,46 @@ const Photographs: React.FC<PhotographsProps> = ({
   photos,
   title = "Photographs"
 }) => {
-  // Check if we have photos for the layout
   if (photos.length < 3) {
     console.warn('Photographs component requires at least 3 photos');
   }
-  
   const displayPhotos = photos.slice(0, 3);
 
   return (
-    <section className="Photographs-section">
-      <div className="Photographs-header">
-        <h3 className="Photographs-title">{title}</h3>
-      </div>
-      
-      <div className="Photographs-content">
+    <section className="photographs">
+      <header className="photographs__header">
+        <h2 className="photographs__title">{title}</h2>
+      </header>
+      <div className="photographs__content row">
         {displayPhotos.map((photo) => (
-          <div key={photo.id} className="Photographs-item">
-            <div className="foto-image-container">
-              <img src={photo.imageUrl} alt={photo.title} className="foto-image" />
-              <div className="foto-more">
-                <div className="foto-more-icon">
-                  <span className="camera-icon">📷</span>
-                </div>
-                <span className="foto-more-text">LE ALTRE FOTO</span>
-                <div className="foto-arrow">
-                  <span className="arrow-right"></span>
+          <article key={photo.id} className="photographs__item">
+            <figure className="photographs__figure">
+              <div className="photographs__image-wrapper">
+                <img
+                  src={photo.imageUrl}
+                  alt={getMockAlt(photo.title)}
+                  className="photographs__image"
+                />
+                <div className="photographs__overlay">
+                  <div className="photographs__overlay-content">
+                    <div className="photographs__icon-wrapper">
+                      <span className="photographs__camera-icon" aria-hidden="true">
+                        📷
+                      </span>
+                    </div>
+                    <span className="photographs__more-text">LE ALTRE FOTO</span>
+                    <div className="photographs__arrow-wrapper" aria-hidden="true">
+                      <span className="photographs__arrow"></span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="foto-caption">
-              <h4 className="foto-title">{photo.title}</h4>
-              <p className="foto-description">{photo.description}</p>
-            </div>
-          </div>
+              <figcaption className="photographs__caption">
+                <h3 className="photographs__photo-title">{photo.title}</h3>
+                <p className="photographs__description">{photo.description}</p>
+              </figcaption>
+            </figure>
+          </article>
         ))}
       </div>
     </section>
