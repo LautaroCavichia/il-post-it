@@ -2,15 +2,9 @@
   .row {
     max-width: 1300px;
     margin: 0 auto; 
-    padding: 1rem 1rem; 
+    padding: 1rem 0.5rem; 
   }
 }
-
-/* Apply border to the content column */
-.homepage .col-lg-8 {
-  border-right: 1px solid var(--border-color);
-}
-
 /* Main container styles */
 .homepage__container {
   max-width: 1300px;
@@ -33,11 +27,6 @@
 
 .homepage__articles-section {
   margin-bottom: 2rem;
-}
-
-/* Sidebar styles */
-.homepage__sidebar {
-  /* Sidebar general styles */
 }
 
 .homepage__sidebar-component {
@@ -104,6 +93,20 @@
   }
 }
 
+.col-lg-8 {
+  border-right: none;
+}
+
+
+/* Sidebar styles .col 3 100% width */
+
+@media (max-width: 500px) {
+  .col-6 {
+    width: 100%;
+    padding: 0;
+  }
+}
+
 /* Override Bootstrap's default breakpoints for our custom breakpoint */
 @media (min-width: 992px) {
   .d-lg-block {
@@ -112,5 +115,9 @@
   
   .d-lg-none {
     display: none !important;
+  }
+
+  .col-lg-8 {
+    border-right: 1px solid var(--border-color);
   }
 }

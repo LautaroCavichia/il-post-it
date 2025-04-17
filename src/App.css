@@ -3,7 +3,6 @@
     --secondary-color: #666;
     --accent-color: #ffdc15;
     --accent-color-hover: #f5ce07;
-    --link-color: #1a73e8;
     --border-color: #656464;
     --border-color-light: #b7b6b6;
     --light-bg: #f8f8f8;
@@ -21,18 +20,14 @@
     font-family: 'Noto Serif', serif;
     line-height: 1.6;
     color: var(--primary-color);
-
+    min-width: 350px;
   }
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0px;
   }
-  
-  .col-lg-8 {
-    border-right: 1px solid var(--border-color);
-  }
-  
+
 
   
   @media (max-width: 768px) {
