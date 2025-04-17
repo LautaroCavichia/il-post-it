@@ -3,6 +3,7 @@
   margin-bottom: 40px;
   font-family: serif;
   position: relative;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .stories__header {
@@ -19,6 +20,7 @@
 }
 
 .stories__title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -27,6 +29,7 @@
 }
 
 .stories__subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: #666;
   font-size: 14px;
   font-style: italic;

@@ -26,6 +26,7 @@
 }
 
 .virgolette__content {
+  cursor: pointer;
   text-align: center;
   width: 100%;
   margin: 0;

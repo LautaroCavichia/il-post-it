@@ -45,7 +45,7 @@ const HomePage: React.FC = () => {
           <Bits items={newsItems} />
           <div className="row">
             <FeaturedArticle article={customArticle} />
-            <div className="col-md-8">
+            <div className="col-lg-8">
               <div className="secondary-articles">
                 <ArticleGrid articles={mockArticles} />
               </div>
@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Desktop sidebar layout */}
-            <div className="col-md-4 d-none d-md-block">
+            <div className="col-lg-4 d-none d-lg-block">
               <Sidebar
                 highlightedArticles={sidebarArticles}
                 flashNews={flashNews}
@@ -70,7 +70,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Mobile sidebar layout (2x2 grid) */}
-            <div className="col-12 d-block d-md-none">
+            <div className="col-12 d-block d-lg-none">
               <div className="row sidebar-mobile-grid">
                 <div className="col-6">
                   <Sidebar

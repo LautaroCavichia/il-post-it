@@ -1,20 +1,21 @@
 /* src/components/common/ArticleCard/ArticleCard.css */
 .article-card {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.8rem;
-  align-items: center;
-  border-bottom: 1px solid var(--border-color-light);
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color-light); /* Border under entire card on small screens */
+}
 
 .article-card--sidebar {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
 }
 
 .article-card__text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Removed the border-bottom from here for small screens */
 }
 
 .article-card__title {
@@ -54,4 +55,21 @@
   height: auto;
   object-fit: cover;
 }
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .article-card {
+    flex-direction: row;
+    border-bottom: none; /* Remove border from entire card on larger screens */
+  }
+  
+  .article-card__text {
+    flex: 1;
+    padding-right: 1rem;
+    border-bottom: 1px solid var(--border-color-light); /* Add border to text only on larger screens */
+  }
+  
+  .article-card__image-container {
+    flex: 2;
+  }
 }

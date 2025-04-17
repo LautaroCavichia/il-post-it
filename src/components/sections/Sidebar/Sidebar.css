@@ -140,7 +140,6 @@
 .sidebar__article-link:hover,
 .sidebar__article-link:focus {
   text-decoration: underline;
-  color: #018786;
 }
 
 .sidebar__article-figure {
@@ -152,6 +151,7 @@
 .sidebar__article-image {
   width: 100%;
   height: 80px;
+  border-radius: 4px;
   object-fit: cover;
 }
 
