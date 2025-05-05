@@ -11,7 +11,7 @@ interface PhotographsProps {
 
 const Photographs: React.FC<PhotographsProps> = ({
   photos,
-  title = "Photographs"
+  title = "Fotografie",
 }) => {
   if (photos.length < 3) {
     console.warn('Photographs component requires at least 3 photos');

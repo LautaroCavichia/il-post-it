@@ -6,11 +6,13 @@ import './Comics.css';
 interface ComicsProps {
   comics: Article[];
   title?: string;
+  subtitle?: string;
 }
 
 const Comics: React.FC<ComicsProps> = ({
   comics,
-  title = "PEANUTS"
+  title,
+  subtitle
 }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const comicsPerPage = 1;
@@ -48,14 +50,16 @@ const Comics: React.FC<ComicsProps> = ({
         
         <div className="comics__more">
           <div className="comics__more-content">
-            <span className="comics__more-text">LE ALTRE STRISCE</span>
+           
             <button 
               className="comics__more-button" 
               type="button"
               aria-label="View all comic strips"
             >
+              
               <span className="comics__arrow comics__arrow--right" aria-hidden="true"></span>
             </button>
+            <span className="comics__more-text">{subtitle}</span>
           </div>
         </div>
       </div>

@@ -22,6 +22,12 @@ const Header: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    // Prevent body scroll when menu is open
+    if (!isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   };
 
   return (
@@ -91,31 +97,138 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="mobile-menu">
-          <nav className="mobile-menu__nav">
-            <ul className="mobile-menu__list">
-              <li className="mobile-menu__item">
-                <a href="#" className="mobile-menu__link">Newsletter</a>
-              </li>
-              <li className="mobile-menu__item">
-                <a href="#" className="mobile-menu__link">Podcast</a>
-              </li>
-              <li className="mobile-menu__item">
-                <a href="#" className="mobile-menu__link">Shop</a>
-              </li>
-              <li className="mobile-menu__item">
-                <a href="#" className="mobile-menu__link">Regala</a>
-              </li>
-              <li className="mobile-menu__item">
-                <a href="#" className="mobile-menu__link">Cerca</a>
-              </li>
-              <li className="mobile-menu__item">
-                <a href="#" className="mobile-menu__link mobile-menu__link--highlight">Abbonati</a>
-              </li>
-            </ul>
-          </nav>
+          <button
+            className="mobile-menu__close"
+            onClick={toggleMobileMenu}
+            aria-label="Close menu"
+          >
+            <i className="fas fa-times" aria-hidden="true"></i>
+          </button>
+
+          {/* Top navigation */}
+          <div className="mobile-menu__top-nav">
+            <a href="#" className="mobile-menu__top-nav-link mobile-menu__top-nav-item">Newsletter</a>
+            <a href="#" className="mobile-menu__top-nav-link mobile-menu__top-nav-item">Podcast</a>
+            <a href="#" className="mobile-menu__top-nav-link">Cerca</a>
+          </div>
+
+          {/* Search box */}
+          <div className="mobile-menu__search">
+            <input type="text" className="mobile-menu__search-input" placeholder="Cerca" />
+            <button className="mobile-menu__search-button">
+              <i className="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          {/* Home section */}
+          <div className="mobile-menu__section-header">
+            <span className="mobile-menu__section-icon">
+              <i className="fas fa-globe" aria-hidden="true"></i>
+            </span>
+            <span>HOME</span>
+          </div>
+
+          {/* Categories */}
+          <div className="mobile-menu__categories">
+            <a href="#" className="mobile-menu__category-link">Italia</a>
+            <a href="#" className="mobile-menu__category-link">Moda</a>
+            <a href="#" className="mobile-menu__category-link">Mondo</a>
+            <a href="#" className="mobile-menu__category-link">Libri</a>
+            <a href="#" className="mobile-menu__category-link">Politica</a>
+            <a href="#" className="mobile-menu__category-link">Consumismi</a>
+            <a href="#" className="mobile-menu__category-link">Tecnologia</a>
+            <a href="#" className="mobile-menu__category-link">Storie/Idee</a>
+            <a href="#" className="mobile-menu__category-link">Internet</a>
+            <a href="#" className="mobile-menu__category-link">Da Costa a Costa</a>
+            <a href="#" className="mobile-menu__category-link">Scienza</a>
+            <a href="#" className="mobile-menu__category-link">Ok Boomer!</a>
+            <a href="#" className="mobile-menu__category-link">Cultura</a>
+            <a href="#" className="mobile-menu__category-link">Media</a>
+            <a href="#" className="mobile-menu__category-link">Economia</a>
+            <a href="#" className="mobile-menu__category-link">Europa</a>
+            <a href="#" className="mobile-menu__category-link">Sport</a>
+            <a href="#" className="mobile-menu__category-link">Altrecose</a>
+          </div>
+
+          {/* Divider */}
+          <div className="mobile-menu__divider"></div>
+
+          {/* Podcast section */}
+          <div className="mobile-menu__bottom-section">
+            <a href="#" className="mobile-menu__bottom-link">
+              <span className="mobile-menu__section-icon">
+                <i className="fas fa-microphone" aria-hidden="true"></i>
+              </span>
+              <span>PODCAST</span>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="mobile-menu__divider"></div>
+
+          {/* Newsletter section */}
+          <div className="mobile-menu__bottom-section">
+            <a href="#" className="mobile-menu__bottom-link">
+              <span className="mobile-menu__section-icon">
+                <i className="fas fa-envelope" aria-hidden="true"></i>
+              </span>
+              <span>NEWSLETTER</span>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="mobile-menu__divider"></div>
+
+          {/* Favorites section */}
+          <div className="mobile-menu__bottom-section">
+            <a href="#" className="mobile-menu__bottom-link">
+              <span className="mobile-menu__section-icon">
+                <i className="fas fa-bookmark" aria-hidden="true"></i>
+              </span>
+              <span>I MIEI PREFERITI</span>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="mobile-menu__divider"></div>
+
+          {/* Shop section */}
+          <div className="mobile-menu__bottom-section">
+            <a href="#" className="mobile-menu__bottom-link">
+              <span className="mobile-menu__section-icon">
+                <i className="fas fa-shopping-bag" aria-hidden="true"></i>
+              </span>
+              <span>SHOP</span>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="mobile-menu__divider"></div>
+
+          {/* Calendar section */}
+          <div className="mobile-menu__bottom-section">
+            <a href="#" className="mobile-menu__bottom-link">
+              <span className="mobile-menu__section-icon">
+                <i className="fas fa-calendar-alt" aria-hidden="true"></i>
+              </span>
+              <span>CALENDARIO</span>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="mobile-menu__divider"></div>
+
+          {/* User section */}
+          <div className="mobile-menu__bottom-section">
+            <a href="#" className="mobile-menu__bottom-link">
+              <span className="mobile-menu__section-icon">
+                <i className="fas fa-user" aria-hidden="true"></i>
+              </span>
+              <span>AREA PERSONALE</span>
+            </a>
+          </div>
         </div>
       )}
     </div>

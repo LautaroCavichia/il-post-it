@@ -30,11 +30,6 @@ const HomePage: React.FC = () => {
   const podcastEpisodes = generateMockPodcasts(3);
   const photographs = generateMockPhotos(7);
 
-  const customArticle = {
-    ...featuredArticle,
-    title: "Anche l'Unione Europea imporrà nuovi dazi contro gli Stati Uniti",
-    summary: "Dopo quelli della Cina, in una serie di ritorsioni piuttosto preoccupanti: tutte le notizie su questa giornata turbolenta, man mano che arrivano"
-  };
 
   return (
     <div className="homepage">
@@ -44,7 +39,7 @@ const HomePage: React.FC = () => {
         <div className="my-container">
           <Bits items={newsItems} />
           <div className="row">
-            <FeaturedArticle article={customArticle} />
+            <FeaturedArticle article={featuredArticle} />
             <div className="col-lg-8">
               <div className="secondary-articles">
                 <ArticleGrid articles={mockArticles} />
@@ -91,10 +86,13 @@ const HomePage: React.FC = () => {
             />
             <Comics
               comics={mockComics}
+              title='PEANUTS'
+              subtitle='LE ALTRE STRISCE'
             />
             <Comics
               comics={mockComics2}
               title="LE PRIME PAGINE DI OGGI"
+              subtitle='TUTTE'
             />
             <OtherStories
               stories={storiesArticles}
