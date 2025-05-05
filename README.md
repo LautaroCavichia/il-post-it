@@ -47,7 +47,7 @@ This project adheres to Web Accessibility Initiative (WAI) guidelines and has be
 
 2. Navigate to the project directory:
    ```
-   cd il-post-frontend
+   cd il-post-it
    ```
 
 3. Install dependencies:
