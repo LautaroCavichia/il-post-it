@@ -4,6 +4,12 @@
     margin: 0 auto; 
     padding: 1rem 0.5rem; 
   }
+  @media (max-width: 768px) {
+    .row {
+      padding: 0.5rem 0 ; /* Adjusted padding for smaller screens */
+    }
+  }
+
 }
 /* Main container styles */
 .homepage__container {

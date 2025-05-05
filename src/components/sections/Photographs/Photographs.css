@@ -173,10 +173,7 @@
   }
   .photographs__overlay {
     position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    bottom: 0;
+    height: 100%;
     background-color: #ffd800;
     display: flex;
     flex-direction: column;

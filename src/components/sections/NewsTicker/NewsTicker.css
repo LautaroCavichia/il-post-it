@@ -1,9 +1,9 @@
-/* src/components/sections/NewsTicker/NewsTicker.css */
 .news-ticker {
   background-color: #fff;
   padding: 15px;
   font-family: 'Arial', sans-serif;
   position: relative;
+
 
 .news-ticker__container {
   max-width: 1300px;
@@ -116,5 +116,42 @@
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-weight: bold;
   display: inline;
+}
+
+/* Media query for medium screens */
+@media (max-width: 768px) {
+  .news-ticker {
+    padding: 12px 10px; /* Reduced vertical padding */
+  }
+  
+  .news-ticker__container {
+    padding: 0 1.5rem;
+  }
+
+  .news-ticker__control {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .news-ticker__label {
+    font-size: 0.7rem;
+  }
+  
+  .news-ticker__content {
+    padding-bottom: 0.8rem;
+  }
+  
+  .news-ticker__item-content {
+    font-size: 13px;
+  }
+  
+  .news-ticker__timestamp {
+    font-size: 0.7rem;
+  }
+  
+  .news-ticker__text {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
 }
 }
