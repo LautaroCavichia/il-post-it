@@ -171,4 +171,18 @@
   .photographs__image-wrapper {
     aspect-ratio: 16/9;
   }
+  .photographs__overlay {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 0;
+    background-color: #ffd800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    transition: all 0.3s ease;
+  }
 }
