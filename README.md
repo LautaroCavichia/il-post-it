@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# Il Post Frontend Replica
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a frontend replica of the Italian online newspaper ["Il Post"](https://www.ilpost.it/). It aims to recreate the user interface and experience of the original website while ensuring high accessibility standards.
 
-## Available Scripts
+## 🚀 Live Demo
 
-In the project directory, you can run:
+Visit the live version at: [il-post-it.netlify.app](https://il-post-it.netlify.app)
 
-### `yarn start`
+## 📋 Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is built as a study case for modern frontend development practices. It replicates the layout, design elements, and interactions of "Il Post" newspaper while implementing best practices for accessibility and responsive design and using lorem ipsum text and image placeholders.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💻 Technologies
 
-### `yarn test`
+- **React** - Frontend library
+- **TypeScript** - For type safety
+- **Yarn** - Package manager
+- **Netlify** - Hosting platform
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔑 Features
 
-### `yarn build`
+- Responsive design that works across devices
+- Accessible interface following WAVE standards
+- Article layouts matching the original site
+- News ticker component
+- Category navigation
+- Featured articles section
+- Article comments section
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ♿ Accessibility
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project adheres to Web Accessibility Initiative (WAI) guidelines and has been tested with WAVE (Web Accessibility Evaluation Tool) to ensure:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Proper semantic HTML structure
+- ARIA attributes where appropriate
+- Sufficient color contrast
+- Keyboard navigation support
+- Screen reader compatibility
+- Focus management
 
-### `yarn eject`
+## 🛠️ Setup and Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone the repository:
+   ```
+   git clone https://github.com/LautaroCavichia/il-post-it.git
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Navigate to the project directory:
+   ```
+   cd il-post-frontend
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Install dependencies:
+   ```
+   yarn install
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Start the development server:
+   ```
+   yarn start
+   ```
 
-## Learn More
+5. Build for production:
+   ```
+   yarn build
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📝 Note
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is an educational project and is not affiliated with or endorsed by "Il Post". All content rights belong to their respective owners. This project is created for educational purposes to demonstrate frontend development skills.
+
+## 📄 License
+
+MIT
